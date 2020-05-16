@@ -45,3 +45,5 @@ function interviewQuestion(job) {
 var developerQuestion = interviewQuestion('developer');
 developerQuestion('Hoang');
 interviewQuestion('designer')('Vu')
+
+//
