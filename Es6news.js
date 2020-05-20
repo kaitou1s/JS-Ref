@@ -74,5 +74,45 @@ var sum = arr.reduce(function(accumulator, currentValue, index) {
 console.log(sum);
 // Map()
 var question = new Map();
-question.set('title', 'Hoang co may nguoi yeu roi?');
-console.log(question.get('title'));
+question.set('title', 'What the name of the lasest version of JS?');
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES7');
+question.set(4, 'ES8');
+question.set('correct', '2');
+question.set(true, 'Correct Answer!');
+question.set(false, 'Wrong Answer!');
+question.forEach((value, key) => {
+    console.log(key);
+})
+
+// Classes and Sub classes
+class Person {
+    constructor(name, dateOfBirth, address, job) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.job = job;
+    }
+    calculateAge() {
+        var age = new Date().getFullYear() - this.dateOfBirth;
+        console.log(age);
+    }
+}
+// const hoang = new Person('hoang', '1999', 'Ha Noi', 'Student');
+// hoang.calculateAge();
+// var a = Date(Date.now());
+// console.log(a);
+class Point extends Person {
+    constructor(name, dateOfBirth, address, job, subject, point) {
+        super(name, dateOfBirth, address, job);
+        this.subject = subject;
+        this.point = point;
+    }
+    grade() {
+        this.point++;
+        console.log(this.point);
+    }
+}
+const point1 = new Point('hoang', '1999', 'Ha Noi', 'Student', 'math', 8);
+point1.grade();
